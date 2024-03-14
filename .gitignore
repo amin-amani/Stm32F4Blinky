@@ -1,6 +1,6 @@
 # Prerequisites
 *.d
-
+Blinky\Debug\
 # Object files
 *.o
 *.ko
