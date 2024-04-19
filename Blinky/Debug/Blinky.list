@@ -396,11 +396,11 @@ int main(void)
   while (1)
   {
 
-	  LD3_GPIO_Port->ODR^=LD4_Pin;
+	  LD3_GPIO_Port->ODR^=LD3_Pin;
  80004e4:	4b05      	ldr	r3, [pc, #20]	; (80004fc <main+0x38>)
  80004e6:	695b      	ldr	r3, [r3, #20]
  80004e8:	4a04      	ldr	r2, [pc, #16]	; (80004fc <main+0x38>)
- 80004ea:	f483 5380 	eor.w	r3, r3, #4096	; 0x1000
+ 80004ea:	f483 5300 	eor.w	r3, r3, #8192	; 0x2000
  80004ee:	6153      	str	r3, [r2, #20]
 	  HAL_Delay(100);
  80004f0:	2064      	movs	r0, #100	; 0x64
@@ -408,7 +408,7 @@ int main(void)
     /* USER CODE END WHILE */
     MX_USB_HOST_Process();
  80004f6:	f006 ffb3 	bl	8007460 <MX_USB_HOST_Process>
-	  LD3_GPIO_Port->ODR^=LD4_Pin;
+	  LD3_GPIO_Port->ODR^=LD3_Pin;
  80004fa:	e7f3      	b.n	80004e4 <main+0x20>
  80004fc:	40020c00 	.word	0x40020c00
 
