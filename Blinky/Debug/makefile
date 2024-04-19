@@ -56,8 +56,8 @@ default.size.stdout \
 OBJDUMP_LIST += \
 Blinky.list \
 
-OBJCOPY_HEX += \
-Blinky.hex \
+OBJCOPY_BIN += \
+Blinky.bin \
 
 
 # All Target
@@ -82,17 +82,17 @@ Blinky.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Blinky.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Blinky.hex"
+Blinky.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Blinky.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Blinky.elf Blinky.hex Blinky.list Blinky.map default.size.stdout
+	-$(RM) Blinky.bin Blinky.elf Blinky.list Blinky.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
