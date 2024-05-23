@@ -13,5 +13,6 @@ root@be1d57b0119d:/opt/st/stm32cubeide_1.14.0# ./stm32cubeide --launcher.suppres
 org.eclipse.cdt.managedbuilder.core.headlessbuild  -buil
 
 d all -importAll ./ -data /home/
+
 ```
 
