@@ -94,12 +94,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	GPIOD->ODR^=1<<13;//orange
+//	GPIOD->ODR^=1<<13;//orange
     /* USER CODE BEGIN 3 */
 	  HAL_Delay(200);
-	  GPIOD->ODR^=1<<12;//green
-	 // GPIOD->ODR^=1<<13;//orange
-	  GPIOD->ODR^=1<<14;//red
+	//  GPIOD->ODR^=1<<12;//green
+	  GPIOD->ODR^=1<<13;//orange
+	//  GPIOD->ODR^=1<<14;//red
 	  //GPIOD->ODR^=1<<15;//blue
   }
   /* USER CODE END 3 */
